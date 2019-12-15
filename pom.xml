@@ -42,6 +42,6 @@
         </plugins>
     </build>
     <scm>
-        <connection>scm:git:ssh:git@github.com:gustavobarboza/spring-petclinic.git</connection>
+        <connection>scm:git:git@github.com:gustavobarboza/spring-petclinic.git</connection>
     </scm>
 </project>
