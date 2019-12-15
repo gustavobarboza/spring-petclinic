@@ -17,7 +17,7 @@
 
     <groupId>com.gustavo</groupId>
     <artifactId>petclinic</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>petclinic</name>
     <description>Spring Pet Clinic Application</description>
 
@@ -43,6 +43,6 @@
     </build>
     <scm>
         <connection>scm:git:git@github.com:gustavobarboza/spring-petclinic.git</connection>
-      <tag>HEAD</tag>
+      <tag>petclinic-0.0.3</tag>
   </scm>
 </project>
