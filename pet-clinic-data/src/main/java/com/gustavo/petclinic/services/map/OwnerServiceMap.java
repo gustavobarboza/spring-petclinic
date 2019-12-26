@@ -1,33 +1,23 @@
 package com.gustavo.petclinic.services.map;
 
 import com.gustavo.petclinic.model.Owner;
-import com.gustavo.petclinic.services.CrudService;
+import com.gustavo.petclinic.services.OwnerService;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
-    @Override
-    public Set<Owner> findAll() {
-        return super.findAll();
-    }
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-    }
+    public Owner findByLastName(String lastName) {
+        List<Owner> result =
+                map.entrySet()
+                .stream()
+                .filter(entry -> entry.getValue().getLastName().equals(lastName))
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
 
-    @Override
-    public void delete(Owner object) {
-        super.delete(object);
-    }
-
-    @Override
-    public Owner save(Owner object) {
-        return super.save(object.getId(), object);
-    }
-
-    @Override
-    public Owner findById(Long id) {
-        return super.findById(id);
+        return result.get(0);
     }
 }
